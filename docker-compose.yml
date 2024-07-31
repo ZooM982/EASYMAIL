@@ -1,0 +1,9 @@
+version: '1.0.0'
+services:
+  rxd_app:
+    build: ./
+    container_name: rxd_app_c1
+    ports:
+      - 3001:3001
+    volumes:
+      - ./:/rxd_app

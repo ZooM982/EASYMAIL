@@ -1,0 +1,34 @@
+
+# ! IMPORTAMT NOTE: ce pipeline ne gere que le deploiement
+# ! IMPORTAMT NOTE: buildez en local avant de pusher
+image: node:14
+variables:
+  PUBLIC_URL: /
+
+stages: 
+     - deploy
+
+deploy_production:
+  stage: deploy
+  image: ubuntu
+  before_script:
+    - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
+    - mkdir -p ~/.ssh
+    - echo "$Admin_Key" | tr -d '\r' > ~/.ssh/***Modifier ici*******
+    - chmod 700 ~/.ssh/***Modifier ici*******
+    - eval "$(ssh-agent -s)"
+    - ssh-add ~/.ssh/***Modifier ici*******
+    - ssh-keyscan -H 'www.gitlab.com' >> ~/.ssh/known_hosts
+    - apt-get install rsync -y -qq
+    - apt-get install curl -y -qq
+
+  script:
+     - echo "Deploying to server"
+     - echo "$Admin_Key" | ssh-add -
+     - ssh -i ~/.ssh/***Modifier ici******* -o StrictHostKeyChecking=no root@$Server_IP -p 22
+     - rsync -avz --progress -a -e "ssh -p 22" build/ root@$Server_IP:/var/www/***Mettez ici le nom de l'app sur le serveur***/build
+     - echo "Deployed "
+  environment:
+    name: production
+  only:
+     - production # Only run on production branch

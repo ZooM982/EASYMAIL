@@ -1,0 +1,48 @@
+{
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": ["google", "plugin:react/recommended"],
+  "overrides": [
+    {
+      "env": {
+        "node": true
+      },
+      "files": [".eslintrc.{js,cjs,json}"],
+      "parserOptions": {
+        "sourceType": "script"
+      }
+    }
+  ],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": ["react", "better-styled-components"],
+  "rules": {
+    // "better-styled-components/sort-declarations-alphabetically": 2,
+    "quotes": ["error", "double", { "avoidEscape": true }], // forcer les doubles quotes
+    "indent": [
+      "off",
+      4,
+      { "MemberExpression": "Off", "ignoredNodes": ["ConditionalExpression"] }
+    ],
+    "no-tabs": "off",
+    "object-curly-spacing": ["error", "always"], //toujours ajouter de l'espace entre les accollades
+    "react/prop-types": "off",
+    "require-jsdoc": "off",
+    "max-len": ["error", { "code": 200 }], // determiner la longueur d'une ligne de code
+    "semi": "off",
+    "eol-last": "off",
+    "comma-dangle": "off",
+    "camelcase": "off",
+    "react/no-unescaped-entities": "off",
+    "space-before-function-paren": "off"
+  }
+}
