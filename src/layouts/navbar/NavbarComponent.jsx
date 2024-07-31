@@ -13,7 +13,7 @@ function NavbarComponent({ bgColor, navbarContainerStyles }) {
         ...navbarContainerStyles,
       }}
     >
-      RxD Navbar Component
+     <p></p>
     </div>
   );
 }

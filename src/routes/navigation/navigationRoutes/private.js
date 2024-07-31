@@ -1,6 +1,6 @@
 /* eslint-disable react/react-in-jsx-scope */
 import HomePage from "pages/Home/HomePage";
-import { ACCEUIL_PATH, PRODUCTS_PATH } from "../navigationPaths";
+import { ACCEUIL_PATH, PRODUCTS_PATH, RECEPTION_PATH } from "../navigationPaths";
 import RequireAuth from "layouts/RequireAuth";
 import ErrorBoundary from "components/ErrorBoundary/ErrorBoundary";
 import { Navigate } from "react-router-dom";
@@ -33,8 +33,12 @@ export const privateRoutes = [
                     },
                     {
                         path: PRODUCTS_PATH,
-                        element: <p>Hello from me</p>
+                        element: <p>Hello</p>
                     },
+                    {
+                        path: RECEPTION_PATH,
+                        element: <p>Test</p>
+                    }
                 ]
             }
         ]
