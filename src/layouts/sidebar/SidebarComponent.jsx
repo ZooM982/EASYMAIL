@@ -3,20 +3,21 @@ import SidebarItem from "../../components/SidebarItem";
 import ResourceDataMap from "../../components/ResourceDataMap";
 import { links } from "routes/navigation/sidebarLinks";
 
-const SidebarComponent = ({ bgColor, activeLinkColor, activeLinkBgColor, colorOnHover, linkColor }) => {
+const SidebarComponent = ({ activeLinkColor, activeLinkBgColor, colorOnHover, linkColor, OnHover }) => {
   const ClonedSidebarItem = ({ linkItem }) => cloneElement(<SidebarItem linkItem={linkItem} />, {
     activeLinkColor,
     activeLinkBgColor,
     colorOnHover,
-    linkColor
+    linkColor,
+    OnHover,
   })
   return (
     <div
       style={{
-        backgroundColor: bgColor ? bgColor : "#fff",
+        borderRadius: 40,
         height: "100%",
         padding: "25px 10px",
-        borderRight: "1px solid rgba(0,0,0,0.1)"
+        marginTop: 60,
       }}
     >
       <ResourceDataMap

@@ -32,7 +32,8 @@
     "build:recette": "GENERATE_SOURCE_MAP=false env-cmd -e recette react-scripts build",
     "build:prod": "GENERATE_SOURCE_MAP=false env-cmd -e production react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build": "tailwindcss -i ./src/styles.css -o ./dist/output.css --watch"
   },
   "eslintConfig": {
     "extends": [
@@ -56,11 +57,12 @@
     "generate"
   ],
   "devDependencies": {
-    "eslint": "^8.49.0",
+    "eslint": "^8.57.0",
     "eslint-config-google": "^0.14.0",
     "eslint-plugin-better-styled-components": "^1.1.2",
     "eslint-plugin-react": "^7.33.2",
     "gh-pages": "^6.1.1",
-    "plop": "^3.1.2"
+    "plop": "^3.1.2",
+    "tailwindcss": "^3.4.7"
   }
 }

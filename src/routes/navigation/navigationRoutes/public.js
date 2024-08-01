@@ -2,6 +2,9 @@
 import ErrorBoundary from "components/ErrorBoundary/ErrorBoundary";
 import { LOGIN_PATH, PUBLIC_PATH, REGISTER_PATH } from "../navigationPaths";
 import WithoutAuth from "layouts/WithoutAuth";
+import LoginComponent from "layouts/login/LoginComponent";
+import SignUpComponent from "layouts/signup/SIgnUpComponent";
+import PublicComponent from "layouts/publicpath/PublicComponent";
 
 /*
 |---------------------------------------------------------------
@@ -18,15 +21,15 @@ export const publicRoutes = [
         children: [
             {
                 path: "",
-                element: <p>Hello from public</p>,
+                element: <PublicComponent />
             },
             {
                 path: LOGIN_PATH,
-                element: <p>Hello from login</p>,
+                element: <LoginComponent />,
             },
             {
                 path: REGISTER_PATH,
-                element: <p>Hello fromo register</p>
+                element: <SignUpComponent />
             }
         ]
     },

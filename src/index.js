@@ -7,6 +7,7 @@ import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import { persistor, store } from "redux/store";
 import Loader from "components/Loader/Loader";
+import "./styles.css"
 
 if (process.env.NODE_ENV === "production") {
   console.log = () => { }

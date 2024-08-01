@@ -1,6 +1,6 @@
 /* eslint-disable react/react-in-jsx-scope */
 import HomePage from "pages/Home/HomePage";
-import { ACCEUIL_PATH, PRODUCTS_PATH, RECEPTION_PATH } from "../navigationPaths";
+import { BROUILLON_PATH, CONTACT_PATH, DOCUMENTS_PATH, ENVOYE_PATH, RECEPTION_PATH } from "../navigationPaths";
 import RequireAuth from "layouts/RequireAuth";
 import ErrorBoundary from "components/ErrorBoundary/ErrorBoundary";
 import { Navigate } from "react-router-dom";
@@ -15,7 +15,7 @@ import SplitShell from "layouts/AppShells/SplitShell";
 */
 export const privateRoutes = [
     {
-        path: ACCEUIL_PATH,
+        path: RECEPTION_PATH,
         errorElement: <ErrorBoundary />,
         element: <RequireAuth />,
         children: [
@@ -25,20 +25,28 @@ export const privateRoutes = [
                 children: [
                     {
                         path: "*",
-                        element: <Navigate to={ACCEUIL_PATH} />
+                        element: <Navigate to={RECEPTION_PATH} />
                     },
                     {
                         path: "",
                         element: <HomePage />
                     },
                     {
-                        path: PRODUCTS_PATH,
-                        element: <p>Hello</p>
+                        path: ENVOYE_PATH,
+                        element: <p>Vos Messages Envoyés s'afficheront ici</p>
                     },
                     {
-                        path: RECEPTION_PATH,
-                        element: <p>Test</p>
-                    }
+                        path: BROUILLON_PATH,
+                        element: <p>Vos Brouillons s'afficheront ici</p>
+                    },
+                    {
+                        path: DOCUMENTS_PATH,
+                        element: <p>Vos Documents sauvegarder s'afficheront ici</p>
+                    },
+                    {
+                        path: CONTACT_PATH,
+                        element: <p>Vos Contacts s'afficheront ici</p>
+                    },
                 ]
             }
         ]

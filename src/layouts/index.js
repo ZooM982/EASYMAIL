@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useRef } from "react";
 import { useMemo } from "react";
-import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
+import { AiOutlineMenuFold, AiOutlineMenuUnfold } from "react-icons/ai";
 import useWindowDimensions from "../hooks/useWindowsDimention";
 import styled from "styled-components";
 
@@ -28,17 +28,18 @@ const SidebarPaner = styled.div`
   height: 100vh;
   position: fixed;
   top: 50px;
-  left: 0%;
-  background-color: #fff;
+  left: -10px;
+  border-radius: 30px;
   transition: width 0.3s;
   z-index: 2;
 `;
 const MenuController = styled.div`
   position: absolute;
-  top: 5px;
-  right: -10px;
-  width: 25px;
-  height: 25px;
+  top: 30px;
+  left: 20px;
+  width: 40px;
+  height: 40px;
+  font-size: 30px;
   background-color: #fff;
   border-radius: 50%;
   display: flex;
@@ -50,18 +51,26 @@ const MenuController = styled.div`
 `;
 const ContaintOutlet = styled.div`
   width: 100%;
-  height: 100vh;
-  // background-color: red;
-  background-color: rgba(241, 241, 241, 0.624);
+  height: 510px;
+  margin-left: ${({ openedMenu, minViewPort }) =>
+    openedMenu ?
+      "65px" :
+      minViewPort ?
+        "255px" :
+        "255px"};
+  border-radius: 30px;
+  margin-top: 110px;
+  margin-right: 10px;
+  background-color: #d6d7d8;
   transition: padding 0.3s;
   overflow-x: hidden;
   z-index: 1;
   padding: ${({ openedMenu, minViewPort }) =>
   openedMenu ?
-    "70px 10px 0 70px" :
+    "20px 10px 0 20px" :
     minViewPort ?
-      "70px 10px 0 70px" :
-      "70px 10px 0 270px"};
+      "20px 10px 0 20px" :
+      "20px 10px 0 20px"};
 `;
 
 const SpliTemplateScreen = ({ children }) => {
@@ -89,16 +98,18 @@ const SpliTemplateScreen = ({ children }) => {
 
   return (
     <Container>
-      <NavbarPaner>{navbar}</NavbarPaner>
-      <BodyContainer>
-        <SidebarPaner openedMenu={openedMenu} ref={sidebarRef}>
-          <MenuController onClick={handleResize}>
+      <NavbarPaner>
+      <MenuController onClick={handleResize}>
             {openedMenu ? (
-              <AiOutlineArrowRight className="menu-controller-icon" />
+              <AiOutlineMenuUnfold className="menu-controller-icon" />
             ) : (
-              <AiOutlineArrowLeft className="menu-controller-icon" />
+              <AiOutlineMenuFold className="menu-controller-icon" />
             )}
           </MenuController>
+        {navbar}
+        </NavbarPaner>
+      <BodyContainer>
+        <SidebarPaner openedMenu={openedMenu} ref={sidebarRef}>
           {sidebar}
         </SidebarPaner>
         <ContaintOutlet openedMenu={openedMenu} minViewPort={minViewPort}>

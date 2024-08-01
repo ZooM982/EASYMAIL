@@ -5,6 +5,8 @@ import styled from "styled-components";
 const LinkItem = styled(NavLink)`
   position: relative;
   display: flex;
+  border-bottom-right-radius: 30px;
+  border-top-right-radius: 30px;
   align-items: center;
   flex-wrap: nowrap;
   margin-bottom: 13px;
@@ -14,6 +16,7 @@ const LinkItem = styled(NavLink)`
   color: ${({ color }) => color};
   &:hover {
     color: ${({ coloronhover }) => coloronhover};
+    background-color: ${({ onhover }) => onhover};
   }
   &.active {
     color: ${({ coloronactive }) => coloronactive};
@@ -27,15 +30,16 @@ const SidebarItem = ({
   activeLinkBgColor,
   colorOnHover,
   linkColor,
+  OnHover,
 }) => {
   const { path, label } = linkItem;
   return (
     <LinkItem
       color={linkColor}
       coloronhover={colorOnHover}
-      // coloronactive={'rgba(0,5,10,.5)'}
       coloronactive={activeLinkColor}
       activelinkbgcolor={activeLinkBgColor}
+      onhover={OnHover}
       to={path}
     >
       <div

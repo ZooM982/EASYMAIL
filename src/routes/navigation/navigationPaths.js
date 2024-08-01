@@ -12,15 +12,17 @@ export const PUBLIC_PATH = "/";
 export const LOGIN_PATH = "login";
 export const REGISTER_PATH = "signup";
 export const FORGETPASSWORD = "/auth/forgetPassword";
-export const RESETPASSWORD = "/aut/resetPassword";
+export const RESETPASSWORD = "/auth/resetPassword";
 
 /**
  * @readonly
  * ! PROTECTED ROUTES
  */
-export const ACCEUIL_PATH = "/";
-export const PRODUCTS_PATH = "products";
-export const RECEPTION_PATH = "boite reception"
+export const RECEPTION_PATH = "/"
+export const ENVOYE_PATH = "Message envoyé";
+export const BROUILLON_PATH = "Brouillons";
+export const DOCUMENTS_PATH = "Documents";
+export const CONTACT_PATH = "Contacts";
 
 /**
  * @readonly
