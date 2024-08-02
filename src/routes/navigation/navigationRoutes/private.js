@@ -1,10 +1,11 @@
 /* eslint-disable react/react-in-jsx-scope */
 import HomePage from "pages/Home/HomePage";
-import { BROUILLON_PATH, CONTACT_PATH, DOCUMENTS_PATH, ENVOYE_PATH, RECEPTION_PATH } from "../navigationPaths";
+import { BROUILLON_PATH, CONTACT_PATH, DOCUMENTS_PATH, ENVOYE_PATH, RECEPTION_PATH, SEND_PATH, SETTINGS_PATH } from "../navigationPaths";
 import RequireAuth from "layouts/RequireAuth";
 import ErrorBoundary from "components/ErrorBoundary/ErrorBoundary";
 import { Navigate } from "react-router-dom";
 import SplitShell from "layouts/AppShells/SplitShell";
+import SendMail from "pages/New message/SendMail";
 
 /*
 |---------------------------------------------------------------
@@ -46,6 +47,14 @@ export const privateRoutes = [
                     {
                         path: CONTACT_PATH,
                         element: <p>Vos Contacts s'afficheront ici</p>
+                    },
+                    {
+                        path: SETTINGS_PATH,
+                        element: <p>Ici vous allez pouvoir modifier vos infos</p>
+                    },
+                    {
+                        path: SEND_PATH,
+                        element: <SendMail />
                     },
                 ]
             }

@@ -1,7 +1,6 @@
 /* eslint-disable react/react-in-jsx-scope */
 import { useNavigate } from "react-router-dom";
-
-export const LOGIN_PATH = "login";
+import { LOGIN_PATH } from "routes/navigation/navigationPaths";
 
 const Signup = () => {
     const navigate = useNavigate();

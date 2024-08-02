@@ -1,17 +1,41 @@
 /* eslint-disable react/react-in-jsx-scope */
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { REGISTER_PATH } from "routes/navigation/navigationPaths";
 
-export const REGISTER_PATH = "signup";
 
 const Register = () => {
-    const navigate = useNavigate();
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
-    const handleSignUpClick = () => {
-        navigate(`/${REGISTER_PATH}`, { replace: true });
-      };
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
+
+  const handleConfirmPasswordChange = (e) => {
+    setConfirmPassword(e.target.value);
+  };
+
+  const navigate = useNavigate();
+
+  const handleSignUpClick = () => {
+    navigate(`/${REGISTER_PATH}`, { replace: true });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (password === confirmPassword) {
+      setErrorMessage("");
+      // Logique pour soumettre le formulaire ou continuer le traitement
+      console.log("Mot de passe confirmé et formulaire soumis");
+    } else {
+      setErrorMessage("Les mots de passe ne correspondent pas.");
+    }
+  };
   return (
     <section>
-      <form action="" className="grid w-[80%] md:w-1/2 mx-auto my-[20px] ">
+      <form action="" onSubmit={handleSubmit} className="grid w-[80%] md:w-1/2 mx-auto my-[20px] ">
         <div className="md:flex justify-between">
           <div className="grid md:w-[48%] py-3 ">
             <label htmlFor="nom">Nom</label>
@@ -46,22 +70,26 @@ const Register = () => {
         </div>
         <div className="md:flex justify-between">
           <div className="grid md:w-[48%] ">
-            <label htmlFor="motdepasse">Créer un mot de passe</label>
+            <label htmlFor="password">Créer un mot de passe</label>
             <input
               className="shadow-[0px_5px_0.6em_gray] rounded-[20px] border-b-[#6298ff] border-b-[2px] outline-[#6298ff] h-[50px] my-[10px] p-[15px] "
               type="password"
               name=""
-              id=""
+              id="password"
+              value={password}
+              onChange={handlePasswordChange}
               placeholder="Mot de passe"
             />
           </div>
           <div className="grid md:w-[48%] ">
-            <label htmlFor="confirmmotdepasse">Confirmer le mot de passe</label>
+            <label htmlFor="confirmPassword">Confirmer le mot de passe</label>
             <input
               className="shadow-[0px_5px_0.6em_gray] rounded-[20px] border-b-[#6298ff] border-b-[2px] outline-[#6298ff] h-[50px] my-[10px] p-[15px] "
               type="password"
               name=""
-              id=""
+              id="confirmPassword"
+              value={confirmPassword}
+              onChange={handleConfirmPasswordChange}
               placeholder="Confirmer le mot de passe"
             />
           </div>
@@ -69,6 +97,7 @@ const Register = () => {
         <h3 className="text-center font-bold my-4 ">
           Vous êtes à un clic d'une gestion facile et efficace de vos messages.
         </h3>
+        {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
         <button
           type="submit"
           className="bg-[#6298ff] h-[50px] rounded-[20px] font-bold "
@@ -77,7 +106,13 @@ const Register = () => {
         </button>
       </form>
       <div className="text-center font-bold">
-        <p className="py-4">Déjà membre ? <br /> Connectez-vous en cliquant <button onClick={handleSignUpClick} className="text-[#6298ff] ">ici</button>  pour accéder à votre compte</p>
+        <p className="py-4">
+          Déjà membre ? <br /> Connectez-vous en cliquant{" "}
+          <button onClick={handleSignUpClick} className="text-[#6298ff] ">
+            ici
+          </button>{" "}
+          pour accéder à votre compte
+        </p>
       </div>
     </section>
   );

@@ -61,7 +61,7 @@ const ContaintOutlet = styled.div`
   border-radius: 30px;
   margin-top: 110px;
   margin-right: 10px;
-  background-color: #d6d7d8;
+  
   transition: padding 0.3s;
   overflow-x: hidden;
   z-index: 1;

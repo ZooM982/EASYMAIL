@@ -18,11 +18,13 @@ export const RESETPASSWORD = "/auth/resetPassword";
  * @readonly
  * ! PROTECTED ROUTES
  */
+export const SEND_PATH = "Nouveau message"
 export const RECEPTION_PATH = "/"
 export const ENVOYE_PATH = "Message envoyé";
 export const BROUILLON_PATH = "Brouillons";
 export const DOCUMENTS_PATH = "Documents";
 export const CONTACT_PATH = "Contacts";
+export const SETTINGS_PATH = "Paramètres";
 
 /**
  * @readonly
