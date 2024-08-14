@@ -1,5 +1,8 @@
 /* eslint-disable react/react-in-jsx-scope */
 import React, { useState, useEffect } from "react";
+import SelectChoice from "./publicHomeSelect";
+import LeftPic from "../../assets/images/florid-email-marketing.gif"
+import Logo from "../../assets/images/logo-easymail.jpg"
 
 const TypingText = ({ text, speed }) => {
   const [displayedText, setDisplayedText] = useState("");
@@ -26,13 +29,16 @@ const PublicHome = () => {
   return (
     <section>
       <div className="grid">
-        <div className="h-[60px] bg-blue-400">
-          <div>
+        <div className="">
+          <img src={Logo} alt="" className="mx-auto"/>
+        </div>
+        <div className="text-center w-[80%] mx-auto ">
             <TypingText text={text} speed={typingSpeed} />
           </div>
-        </div>
-        <div>
-          <p className="w-3/5 text-left mx-auto font-bold my-4 text-[20px] ">
+        <div className="md:flex grid ">
+        <div className="md:w-[50%]">
+          <img src={LeftPic} alt="" className="mx-auto my-3 " />
+          {/* <p className="w-3/5 text-left mx-auto font-bold my-4 text-[20px] ">
             Bienvenue sur EasyMail ! <br /> EasyMail est votre nouvelle solution de
             messagerie électronique, spécialement conçue pour simplifier la
             communication dans le secteur informel au Sénégal. Que vous soyez un
@@ -48,7 +54,11 @@ const PublicHome = () => {
             compte, nous sommes là pour vous accompagner au quotidien, à tout
             moment. Rejoignez-nous et laissez EasyMail faciliter votre vie
             professionnelle !
-          </p>
+          </p> */}
+        </div>
+        <div className="items-center grid">
+          <SelectChoice />
+        </div>
         </div>
       </div>
     </section>

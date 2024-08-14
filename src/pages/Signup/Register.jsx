@@ -13,7 +13,7 @@ const Register = () => {
   return (
     <section>
       <RegisterForm handleSignUpClick={handleSignUpClick} />
-      <div className="text-center font-bold">
+      <div className="text-center font-bold w-[80%] mx-auto ">
         <p className="py-4">
           Déjà membre ? <br /> Connectez-vous en cliquant{" "}
           <button onClick={handleSignUpClick} className="text-[#6298ff]">
