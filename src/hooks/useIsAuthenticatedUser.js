@@ -4,10 +4,10 @@
  * @return {true|false}
  */
 function useIsAuthenticate() {
-    const isAuthenticate = false;
-
+    const isAuthenticate = localStorage.getItem("isAuthenticated") === "true";
     return isAuthenticate;
 }
 
 export default useIsAuthenticate;
+
 

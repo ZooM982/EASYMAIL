@@ -1,7 +1,7 @@
 import useIsAuthenticate from "hooks/useIsAuthenticatedUser";
 import React from "react"
 import { Navigate, Outlet, useLocation } from "react-router-dom";
-import { PUBLIC_PATH, } from "routes/navigation/navigationPaths";
+import { RECEPTION_PATH, } from "routes/navigation/navigationPaths";
 
 /*
 |---------------------------------------------------------------
@@ -19,7 +19,7 @@ function WithoutAuth() {
     return !isAuthenticated ? (
         <Outlet />
     ) : (
-        <Navigate to={PUBLIC_PATH} state={{ from: location }} replace />
+        <Navigate to={RECEPTION_PATH} state={{ from: location }} replace />
     );
 }
 
