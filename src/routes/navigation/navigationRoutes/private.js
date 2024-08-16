@@ -1,11 +1,13 @@
 /* eslint-disable react/react-in-jsx-scope */
 import HomePage from "pages/Home/HomePage";
+import MessageEnvoyé from "pages/MsgSend/MessageEnvoyé";
 import { BROUILLON_PATH, CONTACT_PATH, DOCUMENTS_PATH, ENVOYE_PATH, RECEPTION_PATH, SEND_PATH, SETTINGS_PATH } from "../navigationPaths";
 import RequireAuth from "layouts/RequireAuth";
 import ErrorBoundary from "components/ErrorBoundary/ErrorBoundary";
 import { Navigate } from "react-router-dom";
 import SplitShell from "layouts/AppShells/SplitShell";
 import SendMail from "pages/New message/SendMail";
+import ContactPage from "pages/Contacts/ContactPage";
 
 /*
 |---------------------------------------------------------------
@@ -34,7 +36,7 @@ export const privateRoutes = [
                     },
                     {
                         path: ENVOYE_PATH,
-                        element: <p>Vos Messages Envoyés s'afficheront ici</p>
+                        element:<MessageEnvoyé />
                     },
                     {
                         path: BROUILLON_PATH,
@@ -46,7 +48,7 @@ export const privateRoutes = [
                     },
                     {
                         path: CONTACT_PATH,
-                        element: <p>Vos Contacts s'afficheront ici</p>
+                        element: <ContactPage />
                     },
                     {
                         path: SETTINGS_PATH,
