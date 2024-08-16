@@ -26,6 +26,7 @@ export const DOCUMENTS_PATH = "Documents";
 export const CONTACT_PATH = "Contacts";
 export const SETTINGS_PATH = "Paramètres";
 
+
 /**
  * @readonly
  * ! NOT FOUND ROUTE
