@@ -11,8 +11,8 @@
 export const PUBLIC_PATH = "/";
 export const LOGIN_PATH = "login";
 export const REGISTER_PATH = "signup";
-export const FORGETPASSWORD = "/auth/forgetPassword";
-export const RESETPASSWORD = "/auth/resetPassword";
+export const FORGETPASSWORD = "auth/forgetPassword";
+export const RESETPASSWORD = "auth/resetPassword";
 
 /**
  * @readonly
@@ -25,6 +25,7 @@ export const BROUILLON_PATH = "Brouillons";
 export const DOCUMENTS_PATH = "Documents";
 export const CONTACT_PATH = "Contacts";
 export const SETTINGS_PATH = "Paramètres";
+
 
 /**
  * @readonly

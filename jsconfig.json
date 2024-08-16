@@ -6,5 +6,5 @@
     "src",
     "vendor/cli_generate/lib/hoc",
     "vendor/cli_generate/lib/auth"
-  ]
+, "src/pages/Logout/logout.jsx"  ]
 }

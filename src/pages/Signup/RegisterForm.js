@@ -49,7 +49,7 @@ const RegisterForm = () => {
             fontSize: "18px"
           },
           icon: false,
-          autoClose: 9000,
+          autoClose: 4000,
           progressClassName: "custom-progress-bar-success",
         }
       );
@@ -63,7 +63,7 @@ const RegisterForm = () => {
 
       setTimeout(() => {
         navigate(`/${LOGIN_PATH}`, { replace: true });
-      }, 10000);
+      }, 5000);
     } catch (error) {
       toast.error(
         "Erreur lors de la création du compte. Veuillez vérifier vos informations."

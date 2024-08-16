@@ -10,7 +10,7 @@ const Logo = () => {
       };
 
   return (
-    <div className="w-1/2 md:w-[100%] mx-auto relative">
+    <div className="w-1/2 md:w-[100%] mx-auto h-[100px] relative">
       <button onClick={handleHomeClickUp}>
         <img src={LogoPic} alt="" className="mx-auto" />
       </button>

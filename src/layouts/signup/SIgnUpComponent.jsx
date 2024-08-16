@@ -7,7 +7,7 @@ const SignUpComponent = () => {
   return (
     <section>
       <Logo />
-    <div className="flex items-center my-4">
+    <div className="flex items-center">
     <div className="items-center w-[35%] hidden md:block">
         <img src={SignPic} alt="" className="mx-auto" />
       </div>
