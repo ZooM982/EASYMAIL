@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useLoginUserMutation } from "actions/auth/mutations";
-import { RECEPTION_PATH, REGISTER_PATH } from "routes/navigation/navigationPaths";
+import {
+  FORGETPASSWORD,
+  RECEPTION_PATH,
+  REGISTER_PATH,
+} from "routes/navigation/navigationPaths";
 import { FaCheckCircle, FaEye, FaEyeSlash } from "react-icons/fa";
 import { toast } from "react-toastify";
 
@@ -26,7 +30,8 @@ const Login = () => {
 
         toast.success(
           <>
-            <FaCheckCircle /> <br />Coonnexion établie! <br/> bienvenue sur EASYMAIL
+            <FaCheckCircle /> <br />
+            Coonnexion établie! <br /> bienvenue sur EASYMAIL
           </>,
           {
             style: {
@@ -35,10 +40,10 @@ const Login = () => {
               borderRadius: "8px",
               padding: "10px 20px",
               fontSize: "18px",
-              width: "300px"
+              width: "300px",
             },
             icon: false,
-            autoClose: 9000,
+            autoClose: 4000,
             progressClassName: "custom-progress-bar-success",
           }
         );
@@ -47,13 +52,19 @@ const Login = () => {
 
         setTimeout(() => {
           navigate(`/${RECEPTION_PATH}`, { replace: true });
-        }, 10000);
+        }, 5000);
       } else {
         setError("Informations non valides.");
       }
     } catch (error) {
       setError("Informations non valides.");
     }
+  };
+
+  const navigate2 = useNavigate()
+
+  const handleForgetPass = () => {
+    navigate2(`/${FORGETPASSWORD}`, { replace: true });
   };
 
   return (
@@ -90,6 +101,9 @@ const Login = () => {
           </button>
         </div>
         {error && <p className="text-red-500">{error}</p>}
+        <div className="my-3 ">
+          <button onClick={handleForgetPass}>Mot de passe oublié ?</button>
+        </div>
         <button
           type="submit"
           className="bg-[#6298ff] h-[50px] rounded-[20px] font-bold"

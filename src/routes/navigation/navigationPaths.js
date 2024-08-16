@@ -11,8 +11,8 @@
 export const PUBLIC_PATH = "/";
 export const LOGIN_PATH = "login";
 export const REGISTER_PATH = "signup";
-export const FORGETPASSWORD = "/auth/forgetPassword";
-export const RESETPASSWORD = "/auth/resetPassword";
+export const FORGETPASSWORD = "auth/forgetPassword";
+export const RESETPASSWORD = "auth/resetPassword";
 
 /**
  * @readonly

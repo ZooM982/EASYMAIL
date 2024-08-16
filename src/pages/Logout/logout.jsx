@@ -9,7 +9,7 @@ const handleLogout = () => {
 
   setTimeout(() => {
     navigate(`/${PUBLIC_PATH}`, { replace: true });
-  }, 10000);
+  }, 5000);
 };
 
 export default handleLogout;

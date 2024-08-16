@@ -24,11 +24,11 @@ const userApi = ApiMananger.injectEndpoints({
       invalidatesTags: [INVALIDATE_USERS],
     }),
     forgetPassword: build.mutation({
-      query(body) {
+      query(email) {
         return {
-          url: "API.USER_API.FORGET_PASSWORD()",
+          url: "/password/forgot",
           method: "POST",
-          body,
+          body: { email },
         };
       },
       invalidatesTags: [INVALIDATE_USERS],
@@ -36,7 +36,7 @@ const userApi = ApiMananger.injectEndpoints({
     otpVerification: build.mutation({
       query(body) {
         return {
-          url: "API.USER_API.OTP_VERIFICATION()",
+          url: "API.USER_API.RESET_PASSWORD()",
           method: "POST",
           body,
         };
@@ -44,11 +44,11 @@ const userApi = ApiMananger.injectEndpoints({
       invalidatesTags: [INVALIDATE_USERS],
     }),
     resetPassword: build.mutation({
-      query(body) {
+      query({ token, password }) {
         return {
-          url: "API.USER_API.RESET_PASSWORD()",
+          url: "/password/reset",
           method: "POST",
-          body,
+          body: { token, password },
         };
       },
       invalidatesTags: [INVALIDATE_USERS],
