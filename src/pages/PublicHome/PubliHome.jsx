@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import SelectChoice from "./publicHomeSelect";
 import LeftPic from "../../assets/images/florid-email-marketing.gif"
-import Logo from "../../assets/images/logo-easymail.jpg"
+import Logo from "components/Logo";
 
 const TypingText = ({ text, speed }) => {
   const [displayedText, setDisplayedText] = useState("");
@@ -29,9 +29,7 @@ const PublicHome = () => {
   return (
     <section>
       <div className="grid">
-        <div className="">
-          <img src={Logo} alt="" className="mx-auto"/>
-        </div>
+        <Logo />
         <div className="text-center w-[80%] mx-auto ">
             <TypingText text={text} speed={typingSpeed} />
           </div>

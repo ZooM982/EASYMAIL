@@ -1,0 +1,8 @@
+.custom-progress-bar-success {
+    background: #6298ff; /* Couleur de la barre de progression pour le succès */
+  }
+  
+  .custom-progress-bar-error {
+    background: #d32f2f; /* Couleur de la barre de progression pour l'erreur */
+  }
+  

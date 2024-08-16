@@ -5,7 +5,7 @@ import { CONTACT_PATH, SETTINGS_PATH } from "routes/navigation/navigationPaths";
 import { IoMdContacts, IoMdSettings } from "react-icons/io";
 import { CgProfile } from "react-icons/cg";
 import { CiLogout } from "react-icons/ci";
-
+import handleLogout from "pages/Logout/logout";
 
 const ProfilPopover = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -35,14 +35,13 @@ const ProfilPopover = () => {
 
   const navigate = useNavigate();
 
-
   const handleSettings = () => {
     navigate(`/${SETTINGS_PATH}`, { replace: true });
   };
 
-  const handleContact = () =>{
+  const handleContact = () => {
     navigate(`/${CONTACT_PATH}`, { replace: true });
-  }
+  };
 
   return (
     <div className="relative inline-block text-left">
@@ -61,14 +60,33 @@ const ProfilPopover = () => {
           style={{ left: buttonRef.current.offsetWidth / 96 - 130 }}
         >
           <div>
-            <p className="flex"><span className="mx-1 my-auto"><CgProfile /></span> Mon profil</p>
-            <button onClick={handleContact} className="flex"> <span className="mx-1 my-auto"><IoMdContacts /> </span> Mes Contacts</button>
-            <button onClick={handleSettings} className="flex"> <span className="mx-1 my-auto"><IoMdSettings /> </span> Mes paramètres</button>
+            <p className="flex">
+              <span className="mx-1 my-auto">
+                <CgProfile />
+              </span>{" "}
+              Mon profil
+            </p>
+            <button onClick={handleContact} className="flex">
+              {" "}
+              <span className="mx-1 my-auto">
+                <IoMdContacts />{" "}
+              </span>{" "}
+              Mes Contacts
+            </button>
+            <button onClick={handleSettings} className="flex">
+              {" "}
+              <span className="mx-1 my-auto">
+                <IoMdSettings />{" "}
+              </span>{" "}
+              Mes paramètres
+            </button>
           </div>
           <hr />
           <div className="flex my-2">
-            <span className="mx-1 my-auto"><CiLogout /></span>
-            logout
+            <span className="mx-1 my-auto">
+              <CiLogout />
+            </span>
+            <button onClick={handleLogout}>Logout</button>
           </div>
         </div>
       )}
@@ -77,5 +95,3 @@ const ProfilPopover = () => {
 };
 
 export default ProfilPopover;
-
-
