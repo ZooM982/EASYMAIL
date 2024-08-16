@@ -1,14 +1,13 @@
 /* eslint-disable react/react-in-jsx-scope */
-import Register from "pages/Login/Register";
+import Login from "pages/login/Login";
 
 const LoginComponent = () => {
   return (
     <div>
       <h3 className="text-center mt-5 font-bold">
-        Un compte EasyMail, c'est la clé pour une communication sans souci.{" "}
-        <br /> Rejoignez-nous !
+        Déjà membre ? Connectez-vous et ne manquez aucun message important.
       </h3>
-      <Register />
+      <Login />
     </div>
   );
 };

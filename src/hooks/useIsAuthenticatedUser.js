@@ -4,9 +4,10 @@
  * @return {true|false}
  */
 function useIsAuthenticate() {
-    const isAuthenticate = true;
+    const isAuthenticate = false;
 
     return isAuthenticate;
 }
 
 export default useIsAuthenticate;
+
