@@ -50,6 +50,7 @@ const ResetPass = () => {
             <input
               className="mb-[15px] w-[100%] shadow-[0px_5px_0.6em_gray] rounded-[20px] border-b-[#6298ff] border-b-[2px] outline-[#6298ff] h-[50px] my-[10px] p-[15px]"
               value={password}
+              type={showPassword ? "text" : "password"}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Entrez le nouveau mot de passe"
             />
@@ -70,6 +71,7 @@ const ResetPass = () => {
             <input
               className="mb-[15px] w-[100%] shadow-[0px_5px_0.6em_gray] rounded-[20px] border-b-[#6298ff] border-b-[2px] outline-[#6298ff] h-[50px] my-[10px] p-[15px]"
               value={confirmPassword}
+              type={showPassword ? "text" : "password"}
               onChange={(e) => setConfirmPassword(e.target.value)}
               placeholder="Confirmez le nouveau mot de passe"
             />
