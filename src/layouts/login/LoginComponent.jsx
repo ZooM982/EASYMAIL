@@ -1,5 +1,5 @@
 /* eslint-disable react/react-in-jsx-scope */
-import Login from "pages/login/Login";
+import Login from "../../pages/Login/Login";
 import LogPic from "../../assets/images/techny-cybersecurity-with-password-locked-laptop.png";
 import Logo from "components/Logo";
 
