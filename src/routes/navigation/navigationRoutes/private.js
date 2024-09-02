@@ -1,6 +1,6 @@
 /* eslint-disable react/react-in-jsx-scope */
 import HomePage from "pages/Home/HomePage";
-import MessageEnvoyé from "pages/MsgSend/MessageEnvoyé";
+import MessageEnvoyé from "pages/New message/MessageEnvoyé"; // Assurez-vous d'importer le composant
 import { BROUILLON_PATH, CONTACT_PATH, DOCUMENTS_PATH, ENVOYE_PATH, RECEPTION_PATH, SEND_PATH, SETTINGS_PATH } from "../navigationPaths";
 import RequireAuth from "layouts/RequireAuth";
 import ErrorBoundary from "components/ErrorBoundary/ErrorBoundary";
@@ -32,7 +32,8 @@ export const privateRoutes = [
                     },
                     {
                         path: "",
-                        element: <HomePage />
+                        element: <HomePage />,
+
                     },
                     {
                         path: ENVOYE_PATH,

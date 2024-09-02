@@ -1,7 +1,10 @@
+import React from "react";
+
 const MessageEnvoyé = () => {
+ 
   return (
     <div>
-        <p>JJJJ</p>
+        <p>Les messages envoyés s'afficheront ici</p>
     </div>
   );
 };

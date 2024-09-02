@@ -3,7 +3,7 @@ import React, { useState } from "react";
 
 const SendMail = () => {
   const [to,setTo]=useState('')
-  const [message,setMessage]=useState('')
+  const [body,setBody]=useState('')
   const [subject,setSubject]=useState('')
   const [attachement,setAttachement]=useState(null)
 
@@ -11,13 +11,13 @@ const handleSend = async () =>{
   const formData = new FormData();
   formData.append('to', to);
   formData.append('subject', subject);
-  formData.append('message', message);
+  formData.append('body', body);
   if (attachement) {
     formData.append('attachment', attachement);
   }
 
   try {
-    const response = await axios.post('http://127.0.0.1:8000/api/send_attach_email', formData, {
+    const response = await axios.post('http://127.0.0.1:8000/api/send-email', formData, {
       headers: {
         'Content-Type': 'multipart/form-data'
       }
@@ -52,8 +52,8 @@ const handleSend = async () =>{
         <textarea
           placeholder="Message"
           className="w-full h-32 p-2 border mb-2 outline-none resize-none"
-          onChange={(e)=> setMessage(e.target.value)}
-          value={message}
+          onChange={(e)=> setBody(e.target.value)}
+          value={body}
 />
         <div className="mt-2">
           <input type="file" multiple className="hidden" id="file-input" onChange={(e) =>setAttachement(e.target.value)} value={attachement} />

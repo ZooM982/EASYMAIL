@@ -14,7 +14,7 @@ import { IoPencil } from "react-icons/io5";
 */
 export const links = [
     { path: SEND_PATH, icon: IoPencil, label: "Nouveau message" },
-    { path: RECEPTION_PATH, icon: IoIosMailUnread, label: "Boite de reception" },
+    { path: RECEPTION_PATH, icon: IoIosMailUnread, label: "Boite de reception",id:"reception" },
     { path: ENVOYE_PATH, icon: IoIosSend, label: "Envoyés" },
     { path: BROUILLON_PATH, icon: RiDraftFill, label: "Brouillons" },
     { path: DOCUMENTS_PATH, icon: IoMdDocument, label: "Documents" },
