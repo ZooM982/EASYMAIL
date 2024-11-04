@@ -32,7 +32,10 @@ const SidebarItem = ({
   linkColor,
   OnHover,
 }) => {
-  const { path, label } = linkItem;
+  const { path, label, id } = linkItem;
+  // console.log(id);
+
+  
   return (
     <LinkItem
       color={linkColor}
@@ -62,7 +65,11 @@ const SidebarItem = ({
         }}
       >
         {label}
+        {id==="reception" && "2"}
+
       </p>
+      <span>
+      </span>
     </LinkItem>
   );
 };

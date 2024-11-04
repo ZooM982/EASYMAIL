@@ -2,35 +2,31 @@ import axios from "axios";
 import React, { useState } from "react";
 
 const SendMail = () => {
-  const [to, setTo] = useState("");
-  const [message, setMessage] = useState("");
-  const [subject, setSubject] = useState("");
-  const [attachement, setAttachement] = useState(null);
+  const [to,setTo]=useState('')
+  const [body,setBody]=useState('')
+  const [subject,setSubject]=useState('')
+  const [attachement,setAttachement]=useState(null)
 
-  const handleSend = async () => {
-    const formData = new FormData();
-    formData.append("to", to);
-    formData.append("subject", subject);
-    formData.append("message", message);
-    if (attachement) {
-      formData.append("attachment", attachement);
-    }
+const handleSend = async () =>{
+  const formData = new FormData();
+  formData.append('to', to);
+  formData.append('subject', subject);
+  formData.append('body', body);
+  if (attachement) {
+    formData.append('attachment', attachement);
+  }
 
-    try {
-      const response = await axios.post(
-        "http://127.0.0.1:8000/api/send_attach_email",
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
-      alert(response.data.message);
-    } catch (error) {
-      console.error("There was an error sending the email!", error);
-    }
-  };
+  try {
+    const response = await axios.post('http://127.0.0.1:8000/api/send-email', formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
+    });
+    alert(response.data.message);
+  } catch (error) {
+    console.error("There was an error sending the email!", error);
+  }
+};
 
   return (
     <div className="bg-white rounded-lg w-[90%] md:w-[99%] h-[95%] shadow-lg border border-[#6298ff]">
@@ -55,9 +51,9 @@ const SendMail = () => {
         <textarea
           placeholder="Message"
           className="w-full h-32 p-2 border mb-2 outline-none resize-none"
-          onChange={(e) => setMessage(e.target.value)}
-          value={message}
-        />
+          onChange={(e)=> setBody(e.target.value)}
+          value={body}
+/>
         <div className="mt-2">
           <input
             type="file"
