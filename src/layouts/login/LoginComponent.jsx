@@ -1,11 +1,11 @@
 /* eslint-disable react/react-in-jsx-scope */
-import Login from "../../pages/Login/Login";
+import Login from "pages/login/Login";
 import LogPic from "../../assets/images/techny-cybersecurity-with-password-locked-laptop.png";
 import Logo from "components/Logo";
 
 const LoginComponent = () => {
   return (
-    <section >
+    <section>
       <Logo />
       <div className="flex items-center my-4">
         <div className="items-center w-[40%] hidden md:block">
